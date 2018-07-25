@@ -1,0 +1,1 @@
+pip install "data/cx_Freeze-5.1.1-cp36-cp36m-win_amd64.whl"
