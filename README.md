@@ -27,6 +27,7 @@ Open ```Executable File maker.py```. It will open a console , a bit later , the 
 4. Your converted file will be in folder build ( or build.zip , if selected compress option)
 
 
+Here is a video for guiding: https://www.youtube.com/watch?v=YCNbX0qk5t8
 ## Any bug or want a feature to be added?
 It might be possible that you are using other version. Try updating to the required version. If it don't work , tell me and I will solve the problem.
 
