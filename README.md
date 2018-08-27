@@ -39,3 +39,8 @@ It might be possible that you are using other version. Try updating to the requi
 
 It is made, designed and found working in Windows 10 using python 3.6.3 and cx_Freeze 5.1.1
 
+
+
+
+### Warning:
+Don't rename output file or other files. Renaming output file will cause error to run exe. The name of output file will be the name of the compiled file.
