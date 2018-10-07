@@ -13,8 +13,11 @@ try:
     import cx_Freeze
     impoerror=False
 except:
-    impoerror = True
-    print("Module 'cx_Freeze' not found.....")
+    os.system("pip install cx_Freeze")
+    try:import cx_Freeze
+    except:
+        impoerror = True
+        print("Module 'cx_Freeze' not found.....")
 #starting
 def mainhelp():
     tmb.showinfo("Help","Including files:\n  |  Paste the files in the output (build) folder ( or zip )...\nIcon not showing?\n  |  Make sure that your .ico file is correct...\nCaution:\n  |  Don't delete or rename files else it may not work...\n"+"_"*61+"\nYou can get help about fields by clicking the help icons on the right side")
@@ -50,6 +53,8 @@ def exiit():
     root.destroy()
     mtkroot.destroy()
     sys.exit()
+def about():
+    tmb.showinfo("About","This program is developed by 'M.Nouman (Black Thunder)' . Its free to use. Share it with others.\nFor issues or comments please visit this project's github repo \"www.github.com/BlackSkull01001/cx_freeze_GUI\"")
 mtkroot = Tk()
 mtkroot.iconbitmap("data/Icon.ico")
 mtkroot.withdraw()
@@ -59,6 +64,7 @@ filemenu.add_command(label='Reset',command=mreset,underline=0)
 filemenu.add_separator()
 helpmenu = Menu(menubar, tearoff=0)
 helpmenu.add_command(label='Help',command=mainhelp,underline=0)
+helpmenu.add_command(label='About',command=about,underline=0)
 menubar.add_cascade(label='File',menu=filemenu,underline=0)
 menubar.add_cascade(label='Help',menu=helpmenu,underline=0)
 root = Toplevel(mtkroot, menu=menubar)
@@ -506,7 +512,7 @@ signa['bg'] = "light grey"
 signa['fg'] = "#888888"
 signa.place(x = 434, y = 630)
 
-
 if impoerror == True:
     logp("ModuleNotFoundError: No module named 'cx_Freeze'","red")
+    tmb.showerror("Python Executable Maker","ModuleNotFoundError: No module named 'cx_Freeze'.....\nPlease make sure that you are connected to internet and restart this program")
 mainloop()
