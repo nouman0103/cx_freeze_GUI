@@ -507,7 +507,7 @@ help22.config(image=helpim)
 help22.place(x=512,y=425)
 
 #signature
-signa = Label(root,text="Made by M.Nouman")
+signa = Label(root,text="Made by B.Thunder")
 signa['bg'] = "light grey"
 signa['fg'] = "#888888"
 signa.place(x = 434, y = 630)
