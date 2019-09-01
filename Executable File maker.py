@@ -4,7 +4,7 @@ import tkinter.font,os,time,shutil,subprocess
 from tkinter.filedialog import askopenfilename as aof
 import tkinter.messagebox as tmb
 import tkinter.ttk as ttk
-import os,sys,importlib
+import os,sys,importlib, threading
 from importlib import util
 if os.path.exists("data") == False:
     shutil.unpack_archive("data.zip","data")
@@ -54,7 +54,7 @@ def exiit():
     mtkroot.destroy()
     sys.exit()
 def about():
-    tmb.showinfo("About","This program is developed by 'M.Nouman (Black Thunder)' . Its free to use. Share it with others.\nFor issues or comments please visit this project's github repo \"www.github.com/BlackSkull01001/cx_freeze_GUI\"")
+    tmb.showinfo("About","This program is developed by Black Thunder . Its free to use. Share it with others.\nFor issues or comments please visit this project's github repo \"www.github.com/BlackSkull01001/cx_freeze_GUI\"")
 mtkroot = Tk()
 mtkroot.iconbitmap("data/Icon.ico")
 mtkroot.withdraw()
@@ -311,7 +311,10 @@ def build():
     logp("Building setup.py\nPlease Wait!")
     def builddd():
         subprocess.call("execute.bat", shell=True)
-    root.after(0,builddd())
+    buildthread = threading.Thread(target = builddd)
+    buildthread.start()
+    buildthread.join()
+    
     logp("Command executed Successfully")
     logp("Looking for output folder",wait=0.4)
     if os.path.exists("build"):
@@ -507,7 +510,7 @@ help22.config(image=helpim)
 help22.place(x=512,y=425)
 
 #signature
-signa = Label(root,text="Made by B.Thunder")
+signa = Label(root,text="Made by M.Nouman")
 signa['bg'] = "light grey"
 signa['fg'] = "#888888"
 signa.place(x = 434, y = 630)
