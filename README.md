@@ -1,6 +1,8 @@
 <h1 align="center">PY to EXE converter</h1>
 <p align="center">Convert your .py files to .exe files using this Graphical User Interface made with the help of <a href="https://anthony-tuininga.github.io/cx_Freeze/">cx_Freeze</a> and <a href="https://wiki.python.org/moin/TkInter">tkinter</a> in Python.</p>
 
+<h1> DISCOUNTINUED! </h1><b>(Not Ideal for use)</b>
+
 ## Requirements
 > Python 3.6
 
